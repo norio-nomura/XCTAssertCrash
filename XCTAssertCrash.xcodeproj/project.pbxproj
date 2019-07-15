@@ -1,0 +1,696 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		"XCTAssertCrash::XCTAssertCrashPackageTests::ProductTarget" /* XCTAssertCrashPackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_59 /* Build configuration list for PBXAggregateTarget "XCTAssertCrashPackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_62 /* PBXTargetDependency */,
+			);
+			name = XCTAssertCrashPackageTests;
+			productName = XCTAssertCrashPackageTests;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		6C19D20722E31C3F000EA2C0 /* CMachExceptionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* CMachExceptionHandler.h */; };
+		6C19D20822E31C40000EA2C0 /* mach_excServer.h in Headers */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* mach_excServer.h */; };
+		6C19D20922E31C4D000EA2C0 /* mach_excServer.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* mach_excServer.c */; };
+		6C19D31222E334E4000EA2C0 /* ThreadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C19D30F22E334E4000EA2C0 /* ThreadState.swift */; };
+		6C19D31522E351F9000EA2C0 /* CMachExceptionHandler.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C19D31422E351F9000EA2C0 /* CMachExceptionHandler.c */; };
+		OBJ_45 /* MachException.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* MachException.swift */; };
+		OBJ_46 /* PosixSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* PosixSignal.swift */; };
+		OBJ_47 /* SwiftReportFatalErrorsToDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* SwiftReportFatalErrorsToDebugger.swift */; };
+		OBJ_48 /* XCTAssertCrash.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* XCTAssertCrash.swift */; };
+		OBJ_57 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_68 /* AbortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* AbortTests.swift */; };
+		OBJ_69 /* XCTAssertCrashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* XCTAssertCrashTests.swift */; };
+		OBJ_70 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* XCTestManifests.swift */; };
+		OBJ_72 /* XCTAssertCrash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "XCTAssertCrash::XCTAssertCrash::Product" /* XCTAssertCrash.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6C19D20322E31105000EA2C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "XCTAssertCrash::XCTAssertCrash";
+			remoteInfo = XCTAssertCrash;
+		};
+		6C19D20522E31108000EA2C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "XCTAssertCrash::XCTAssertCrashTests";
+			remoteInfo = XCTAssertCrashTests;
+		};
+		6C19D2FF22E32C0C000EA2C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C19D2FA22E32C0C000EA2C0 /* Test_iOS_App.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6C19D2D722E325B5000EA2C0;
+			remoteInfo = Test_iOS_App;
+		};
+		6C19D30122E32C0C000EA2C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C19D2FA22E32C0C000EA2C0 /* Test_iOS_App.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6C19D2EB22E325B8000EA2C0;
+			remoteInfo = Test_iOS_AppTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6C19D2FA22E32C0C000EA2C0 /* Test_iOS_App.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Test_iOS_App.xcodeproj; path = Test_iOS_App/Test_iOS_App.xcodeproj; sourceTree = "<group>"; };
+		6C19D30F22E334E4000EA2C0 /* ThreadState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadState.swift; sourceTree = "<group>"; };
+		6C19D31422E351F9000EA2C0 /* CMachExceptionHandler.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = CMachExceptionHandler.c; sourceTree = "<group>"; };
+		OBJ_10 /* mach_excServer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mach_excServer.c; sourceTree = "<group>"; };
+		OBJ_12 /* CMachExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMachExceptionHandler.h; sourceTree = "<group>"; };
+		OBJ_13 /* mach_excServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mach_excServer.h; sourceTree = "<group>"; };
+		OBJ_15 /* MachException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachException.swift; sourceTree = "<group>"; };
+		OBJ_16 /* PosixSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosixSignal.swift; sourceTree = "<group>"; };
+		OBJ_17 /* SwiftReportFatalErrorsToDebugger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftReportFatalErrorsToDebugger.swift; sourceTree = "<group>"; };
+		OBJ_18 /* XCTAssertCrash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTAssertCrash.swift; sourceTree = "<group>"; };
+		OBJ_21 /* AbortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbortTests.swift; sourceTree = "<group>"; };
+		OBJ_22 /* XCTAssertCrashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTAssertCrashTests.swift; sourceTree = "<group>"; };
+		OBJ_23 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		OBJ_28 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		OBJ_29 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_9 /* generate_mach_excServer.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = generate_mach_excServer.sh; sourceTree = "<group>"; };
+		"XCTAssertCrash::XCTAssertCrash::Product" /* XCTAssertCrash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = XCTAssertCrash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"XCTAssertCrash::XCTAssertCrashTests::Product" /* XCTAssertCrashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = XCTAssertCrashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_72 /* XCTAssertCrash.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6C19D2FB22E32C0C000EA2C0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C19D30022E32C0C000EA2C0 /* Test_iOS_App.app */,
+				6C19D30222E32C0C000EA2C0 /* Test_iOS_AppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		OBJ_11 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_12 /* CMachExceptionHandler.h */,
+				OBJ_13 /* mach_excServer.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		OBJ_14 /* XCTAssertCrash */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_15 /* MachException.swift */,
+				OBJ_16 /* PosixSignal.swift */,
+				OBJ_17 /* SwiftReportFatalErrorsToDebugger.swift */,
+				6C19D30F22E334E4000EA2C0 /* ThreadState.swift */,
+				OBJ_18 /* XCTAssertCrash.swift */,
+			);
+			name = XCTAssertCrash;
+			path = Sources/XCTAssertCrash;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_19 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_20 /* XCTAssertCrashTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_20 /* XCTAssertCrashTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_21 /* AbortTests.swift */,
+				OBJ_22 /* XCTAssertCrashTests.swift */,
+				OBJ_23 /* XCTestManifests.swift */,
+			);
+			name = XCTAssertCrashTests;
+			path = Tests/XCTAssertCrashTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"XCTAssertCrash::XCTAssertCrashTests::Product" /* XCTAssertCrashTests.xctest */,
+				"XCTAssertCrash::XCTAssertCrash::Product" /* XCTAssertCrash.framework */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_19 /* Tests */,
+				6C19D2FA22E32C0C000EA2C0 /* Test_iOS_App.xcodeproj */,
+				OBJ_24 /* Products */,
+				OBJ_28 /* LICENSE */,
+				OBJ_29 /* README.md */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* CMachExceptionHandler */,
+				OBJ_14 /* XCTAssertCrash */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* CMachExceptionHandler */ = {
+			isa = PBXGroup;
+			children = (
+				6C19D31422E351F9000EA2C0 /* CMachExceptionHandler.c */,
+				OBJ_9 /* generate_mach_excServer.sh */,
+				OBJ_11 /* include */,
+				OBJ_10 /* mach_excServer.c */,
+			);
+			name = CMachExceptionHandler;
+			path = Sources/CMachExceptionHandler;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6C19D20622E31C37000EA2C0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C19D20722E31C3F000EA2C0 /* CMachExceptionHandler.h in Headers */,
+				6C19D20822E31C40000EA2C0 /* mach_excServer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		"XCTAssertCrash::SwiftPMPackageDescription" /* XCTAssertCrashPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_53 /* Build configuration list for PBXNativeTarget "XCTAssertCrashPackageDescription" */;
+			buildPhases = (
+				OBJ_56 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XCTAssertCrashPackageDescription;
+			productName = XCTAssertCrashPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"XCTAssertCrash::XCTAssertCrash" /* XCTAssertCrash */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_41 /* Build configuration list for PBXNativeTarget "XCTAssertCrash" */;
+			buildPhases = (
+				6C19D20622E31C37000EA2C0 /* Headers */,
+				OBJ_44 /* Sources */,
+				OBJ_49 /* Frameworks */,
+				6C19D31322E33B2F000EA2C0 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XCTAssertCrash;
+			productName = XCTAssertCrash;
+			productReference = "XCTAssertCrash::XCTAssertCrash::Product" /* XCTAssertCrash.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"XCTAssertCrash::XCTAssertCrashTests" /* XCTAssertCrashTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_64 /* Build configuration list for PBXNativeTarget "XCTAssertCrashTests" */;
+			buildPhases = (
+				OBJ_67 /* Sources */,
+				OBJ_71 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_74 /* PBXTargetDependency */,
+			);
+			name = XCTAssertCrashTests;
+			productName = XCTAssertCrashTests;
+			productReference = "XCTAssertCrash::XCTAssertCrashTests::Product" /* XCTAssertCrashTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 9999;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "XCTAssertCrash" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_24 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6C19D2FB22E32C0C000EA2C0 /* Products */;
+					ProjectRef = 6C19D2FA22E32C0C000EA2C0 /* Test_iOS_App.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				"XCTAssertCrash::XCTAssertCrash" /* XCTAssertCrash */,
+				"XCTAssertCrash::SwiftPMPackageDescription" /* XCTAssertCrashPackageDescription */,
+				"XCTAssertCrash::XCTAssertCrashPackageTests::ProductTarget" /* XCTAssertCrashPackageTests */,
+				"XCTAssertCrash::XCTAssertCrashTests" /* XCTAssertCrashTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6C19D30022E32C0C000EA2C0 /* Test_iOS_App.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Test_iOS_App.app;
+			remoteRef = 6C19D2FF22E32C0C000EA2C0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6C19D30222E32C0C000EA2C0 /* Test_iOS_AppTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Test_iOS_AppTests.xctest;
+			remoteRef = 6C19D30122E32C0C000EA2C0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C19D31322E33B2F000EA2C0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				6C19D20922E31C4D000EA2C0 /* mach_excServer.c in Sources */,
+				6C19D31522E351F9000EA2C0 /* CMachExceptionHandler.c in Sources */,
+				OBJ_45 /* MachException.swift in Sources */,
+				OBJ_46 /* PosixSignal.swift in Sources */,
+				6C19D31222E334E4000EA2C0 /* ThreadState.swift in Sources */,
+				OBJ_47 /* SwiftReportFatalErrorsToDebugger.swift in Sources */,
+				OBJ_48 /* XCTAssertCrash.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_57 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_68 /* AbortTests.swift in Sources */,
+				OBJ_69 /* XCTAssertCrashTests.swift in Sources */,
+				OBJ_70 /* XCTestManifests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "XCTAssertCrash::XCTAssertCrashTests" /* XCTAssertCrashTests */;
+			targetProxy = 6C19D20522E31108000EA2C0 /* PBXContainerItemProxy */;
+		};
+		OBJ_74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "XCTAssertCrash::XCTAssertCrash" /* XCTAssertCrash */;
+			targetProxy = 6C19D20322E31105000EA2C0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/CMachExceptionHandler/include",
+				);
+				INFOPLIST_FILE = XCTAssertCrash.xcodeproj/XCTAssertCrash_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = XCTAssertCrash;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_OBJC_BRIDGING_HEADER = Sources/CMachExceptionHandler/include/CMachExceptionHandler.h;
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = XCTAssertCrash;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/CMachExceptionHandler/include",
+				);
+				INFOPLIST_FILE = XCTAssertCrash.xcodeproj/XCTAssertCrash_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = XCTAssertCrash;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_OBJC_BRIDGING_HEADER = Sources/CMachExceptionHandler/include/CMachExceptionHandler.h;
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = XCTAssertCrash;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		OBJ_55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		OBJ_60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/CMachExceptionHandler/include",
+				);
+				INFOPLIST_FILE = XCTAssertCrash.xcodeproj/XCTAssertCrashTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = XCTAssertCrashTests;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/CMachExceptionHandler/include",
+				);
+				INFOPLIST_FILE = XCTAssertCrash.xcodeproj/XCTAssertCrashTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = XCTAssertCrashTests;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_2 /* Build configuration list for PBXProject "XCTAssertCrash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_41 /* Build configuration list for PBXNativeTarget "XCTAssertCrash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_42 /* Debug */,
+				OBJ_43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_53 /* Build configuration list for PBXNativeTarget "XCTAssertCrashPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_54 /* Debug */,
+				OBJ_55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_59 /* Build configuration list for PBXAggregateTarget "XCTAssertCrashPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_60 /* Debug */,
+				OBJ_61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_64 /* Build configuration list for PBXNativeTarget "XCTAssertCrashTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_65 /* Debug */,
+				OBJ_66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}
