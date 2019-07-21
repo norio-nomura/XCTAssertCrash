@@ -133,7 +133,13 @@ final class XCTAssertCrashTests: XCTestCase {
             }
         }
         XCTAssertCrash(badAccess(), signalHandler: {
+        #if canImport(Darwin)
             XCTAssertEqual($0, SIGBUS)
+        #elseif canImport(Glibc)
+            XCTAssertEqual($0, SIGSEGV)
+        #else
+            #error("Unsupported Platform")
+        #endif
         }, stdoutHandler: {
             XCTAssertTrue($0.isEmpty)
         }, stderrHandler: {

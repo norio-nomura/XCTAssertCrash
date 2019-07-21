@@ -18,6 +18,7 @@ extension XCTAssertCrashTests {
     static let __allTests__XCTAssertCrashTests = [
         ("test_assert", test_assert),
         ("test_assertionFailure", test_assertionFailure),
+        ("test_badAccess", test_badAccess),
         ("test_fatalError", test_fatalError),
         ("test_forceTry", test_forceTry),
         ("test_forceUnwrap", test_forceUnwrap),
@@ -25,6 +26,7 @@ extension XCTAssertCrashTests {
         ("test_overflow", test_overflow),
         ("test_precondition", test_precondition),
         ("test_preconditionFailure", test_preconditionFailure),
+        ("test_segv", test_segv),
     ]
 }
 
