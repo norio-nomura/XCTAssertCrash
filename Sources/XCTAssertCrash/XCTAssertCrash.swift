@@ -116,6 +116,13 @@ var isBeingDebugged: Bool {
 #endif
 }
 
+#if canImport(Darwin)
+func kernCheck(_ block: @autoclosure () -> kern_return_t, file: StaticString = #file, line: UInt = #line) {
+    let result = block()
+    assert(result == KERN_SUCCESS, file: file, line: line)
+}
+#endif
+
 // MARK: - private
 
 // MARK: Register Signal Handler to Thread Dictionary

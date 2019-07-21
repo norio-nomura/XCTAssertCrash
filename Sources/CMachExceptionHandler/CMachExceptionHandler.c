@@ -1,3 +1,7 @@
+#ifdef __APPLE__
+#import "TargetConditionals.h"
+#if TARGET_OS_OSX || TARGET_OS_IOS
+
 #include <assert.h>
 #include <dispatch/dispatch.h>
 #include <mach/mach.h>
@@ -29,3 +33,6 @@ mach_port_t startMachExceptionHandlerThread()
     });
     return exceptionPort;
 }
+
+#endif /* TARGET_OS_OSX || TARGET_OS_IOS */
+#endif /* __APPLE__ */
