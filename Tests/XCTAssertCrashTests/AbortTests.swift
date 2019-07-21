@@ -39,6 +39,9 @@ private func enableAbortTest(_ testFullName: String = #function) -> Bool {
         print("\(testFullName) is enabled by \(environmentVariableKey)")
         return true
     }
+#if canImport(Darwin)
+    return false
+#elseif os(Linux)
     let testName = testFullName.replacingOccurrences(of: "()", with: "")
     let result = CommandLine.arguments.contains(where: { $0.hasSuffix("/\(testName)") })
     if result {
@@ -46,6 +49,6 @@ private func enableAbortTest(_ testFullName: String = #function) -> Bool {
     } else {
         print("Skipping \(testFullName)")
     }
-
     return result
+#endif
 }

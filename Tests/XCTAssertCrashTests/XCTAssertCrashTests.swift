@@ -133,7 +133,13 @@ final class XCTAssertCrashTests: XCTestCase {
             }
         }
         XCTAssertCrash(badAccess(), signalHandler: {
+        #if canImport(Darwin)
             XCTAssertEqual($0, SIGBUS)
+        #elseif os(Linux)
+            XCTAssertEqual($0, SIGSEGV)
+        #else
+            #error("Unsupported Platform")
+        #endif
         }, stdoutHandler: {
             XCTAssertTrue($0.isEmpty)
         }, stderrHandler: {
@@ -145,7 +151,7 @@ final class XCTAssertCrashTests: XCTestCase {
         func badAccess() {
         #if canImport(Darwin)
             let unsafePointer = UnsafePointer<Int>(bitPattern: UInt(MACH_VM_MAX_ADDRESS))
-        #elseif canImport(Glibc)
+        #elseif os(Linux)
             var rlimAddressSpace = rlimit()
             let result = getrlimit(numericCast(RLIMIT_AS.rawValue), &rlimAddressSpace)
             assert(result == 0)

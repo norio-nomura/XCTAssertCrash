@@ -24,7 +24,7 @@ public enum PosixSignal {
 private extension PosixSignal {
     // MARK: - Register POSIX Signal Handlers
 
-    static let targetSignals: [Int32] = [SIGILL, SIGABRT]
+    static let targetSignals: [Int32] = [SIGILL, SIGABRT, SIGBUS, SIGSEGV]
 
     struct SignalInfo {
         var oldAction = sigaction()

@@ -172,11 +172,6 @@ private extension MachException {
     }()
 }
 
-func kernCheck(_ block: @autoclosure () -> kern_return_t, file: StaticString = #file, line: UInt = #line) {
-    let result = block()
-    assert(result == KERN_SUCCESS, file: file, line: line)
-}
-
 // MARK: - Internal functions for `mach_excServer.c`
 
 // swiftlint:disable identifier_name
@@ -294,4 +289,4 @@ func catch_mach_exception_raise( // swiftlint:disable:this function_parameter_co
     preconditionFailure()
 }
 
-#endif
+#endif // canImport(Darwin) && !os(tvOS) && !os(watchOS)
