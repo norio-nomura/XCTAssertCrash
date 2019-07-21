@@ -16,11 +16,11 @@ import XCTest
 ///  #endif
 /// ```
 public var skipXCTAssertCrashIfIsBeingDebugged: Bool = {
-    #if canImport(Darwin) && !os(tvOS) && !os(watchOS)
-        return false
-    #else
-        return true
-    #endif
+#if canImport(Darwin) && !os(tvOS) && !os(watchOS)
+    return false
+#else
+    return true
+#endif
 }()
 
 /// Asserts that an expression crashes.
@@ -91,7 +91,7 @@ public func XCTAssertCrash<T>(
     }
     return result
 }
-#endif
+#endif // !os(watchOS) && canImport(XCTest)
 
 /// Returns true if the current process is being debugged (either
 /// running under the debugger or has a debugger attached post facto).

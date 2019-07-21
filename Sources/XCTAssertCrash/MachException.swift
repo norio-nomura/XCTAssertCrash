@@ -289,4 +289,4 @@ func catch_mach_exception_raise( // swiftlint:disable:this function_parameter_co
     preconditionFailure()
 }
 
-#endif
+#endif // canImport(Darwin) && !os(tvOS) && !os(watchOS)
