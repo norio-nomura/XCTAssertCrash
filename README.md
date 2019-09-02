@@ -42,11 +42,11 @@ public func XCTAssertCrash<T>(
 
 ### Mach Exception Handler
 - `XCTAssertCrash` can not handle crashes caused by `abort()`.
-- `XCTAssertCrash` can not handle the breakpoint set in expression. On detecting a stop at a breakpoint set by the debugger, `XCTAssertCrash` generates `assertionFailure()`.
+- `XCTAssertCrash` can not handle a breakpoint set in expression. On detecting a stop at a breakpoint set by the debugger, `XCTAssertCrash` generates `assertionFailure()`.
 
 ### POSIX Signal Handler
--  `lldb` will catch the signal and stopp on crash before `XCTAssertCrash` detects them.
-- **So, if process is beingd debugged, `XCTAssertCrash` will skip evaluation the expression by default.**  
+-  `lldb` will catch the signal and stop on crash before `XCTAssertCrash` detects it.
+- **So, if the process is being debugged, `XCTAssertCrash` will skip the evaluation of the expression by default.**  
     To avoid this behavior,
     - Set `skipXCTAssertCrashIfIsBeingDebugged` to `false`.  
     or  
