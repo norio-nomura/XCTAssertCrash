@@ -68,7 +68,8 @@ public func XCTAssertCrash<T>(
     let stderrData = capture(from: STDERR_FILENO) {
         let stdoutData = capture(from: STDIN_FILENO) {
             let sema = DispatchSemaphore(value: 0)
-            let thread = Thread {
+            let thread: Thread
+            let block: () -> Void = {
                 driver({
                     result = expression()
                 }, {
@@ -76,6 +77,11 @@ public func XCTAssertCrash<T>(
                     sema.signal()
                 })
                 sema.signal()
+            }
+            if #available(macOS 12, iOS 10, tvOS 10, watchOS 3, *) {
+                thread = Thread(block: block)
+            } else {
+                thread = _Thread(block: block)
             }
             thread.start()
             sema.wait()
@@ -91,6 +97,19 @@ public func XCTAssertCrash<T>(
     }
     return result
 }
+
+private final class _Thread: Thread {
+    private let block: () -> Void
+
+    init(block: @escaping () -> Void) {
+        self.block = block
+    }
+
+    override func main() {
+        block()
+    }
+}
+
 #endif // !os(watchOS) && canImport(XCTest)
 
 /// Returns true if the current process is being debugged (either
