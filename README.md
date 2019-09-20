@@ -4,7 +4,9 @@ Asserts that an expression crashes by using Mach Exception Handler or POSIX Sign
 On Apple Platforms except tvOS, it uses Mach Exception Handler.  
 On other Platforms like Linux or tvOS, it uses POSIX Signal Handler. 
 
-[![Build Status](https://dev.azure.com/norio-nomura/XCTAssertCrash/_apis/build/status/norio-nomura.XCTAssertCrash?branchName=master)](https://dev.azure.com/norio-nomura/XCTAssertCrash/_build/latest?definitionId=8&branchName=master)
+[![SwiftPM](https://github.com/norio-nomura/XCTAssertCrash/workflows/SwiftPM/badge.svg)](https://launch-editor.github.com/actions?workflowID=SwiftPM&event=pull_request&nwo=norio-nomura%2FXCTAssertCrash)
+[![xcodebuild](https://github.com/norio-nomura/XCTAssertCrash/workflows/xcodebuild/badge.svg)](https://launch-editor.github.com/actions?workflowID=xcodebuild&event=pull_request&nwo=norio-nomura%2FXCTAssertCrash)
+[![Nightly](https://github.com/norio-nomura/XCTAssertCrash/workflows/Nightly/badge.svg)](https://launch-editor.github.com/actions?workflowID=Nightly&event=pull_request&nwo=norio-nomura%2FXCTAssertCrash)
 
 ## Usage
 
