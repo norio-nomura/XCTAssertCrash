@@ -20,7 +20,7 @@ on:
       - 'Tests/*/*'
 
 jobs:
-  macOS:
+  Xcode:
     strategy:
       matrix:
         xcode: ['10.2', '10.2.1', '10.3', '11']
