@@ -4,18 +4,24 @@ on:
   push:
     branches: [master]
     paths: 
-    - 'Sources/*'
-    - 'Tests/*'
-    - '!Tests/LinuxMain.swift'
-    - 'XCTAssertCrash.xcodeproj/*'
-    - '.github/workflows/xcodebuild.yml'
+      - '!Tests/LinuxMain.swift'
+      - '.github/workflows/xcodebuild.yml'
+      - 'XCTAssertCrash.xcodeproj/*'
+      - 'XCTAssertCrash.xcodeproj/*/*'
+      - 'XCTAssertCrash.xcodeproj/*/*/*'
+      - 'Sources/*/*'
+      - 'Sources/*/*/*'
+      - 'Tests/*/*'
   pull_request:
     paths:
-    - 'Sources/*'
-    - 'Tests/*'
-    - '!Tests/LinuxMain.swift'
-    - 'XCTAssertCrash.xcodeproj/*'
-    - '.github/workflows/xcodebuild.yml'
+      - '!Tests/LinuxMain.swift'
+      - '.github/workflows/xcodebuild.yml'
+      - 'XCTAssertCrash.xcodeproj/*'
+      - 'XCTAssertCrash.xcodeproj/*/*'
+      - 'XCTAssertCrash.xcodeproj/*/*/*'
+      - 'Sources/*/*'
+      - 'Sources/*/*/*'
+      - 'Tests/*/*'
 
 jobs:
   xcodebuild:
