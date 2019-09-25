@@ -4,64 +4,58 @@ on:
   push:
     branches: [master]
     paths: 
-    - 'Sources/*'
-    - 'Tests/*'
-    - '!Tests/LinuxMain.swift'
-    - 'XCTAssertCrash.xcodeproj/*'
-    - '.github/workflows/xcodebuild.yml'
+      - '!Tests/LinuxMain.swift'
+      - '.github/workflows/xcodebuild.yml'
+      - 'XCTAssertCrash.xcodeproj/*'
+      - 'XCTAssertCrash.xcodeproj/*/*'
+      - 'XCTAssertCrash.xcodeproj/*/*/*'
+      - 'Sources/*/*'
+      - 'Sources/*/*/*'
+      - 'Tests/*/*'
   pull_request:
     paths:
-    - 'Sources/*'
-    - 'Tests/*'
-    - '!Tests/LinuxMain.swift'
-    - 'XCTAssertCrash.xcodeproj/*'
-    - '.github/workflows/xcodebuild.yml'
+      - '!Tests/LinuxMain.swift'
+      - '.github/workflows/xcodebuild.yml'
+      - 'XCTAssertCrash.xcodeproj/*'
+      - 'XCTAssertCrash.xcodeproj/*/*'
+      - 'XCTAssertCrash.xcodeproj/*/*/*'
+      - 'Sources/*/*'
+      - 'Sources/*/*/*'
+      - 'Tests/*/*'
 
 jobs:
   xcodebuild:
     strategy:
       matrix:
-        xcode:
-          - version: '10.2'
-            flag_for_test: -enableCodeCoverage YES -parallel-testing-enabled NO
-          - version: '10.2.1'
-            flag_for_test: -enableCodeCoverage YES -parallel-testing-enabled NO
-          - version: '10.3'
-            flag_for_test: -enableCodeCoverage YES -parallel-testing-enabled NO
-          - version: '11'
-            flag_for_test: -enableCodeCoverage YES -parallel-testing-enabled NO
+        developer_dir:
+          - '/Applications/Xcode_10.2.app'
+          - '/Applications/Xcode_10.2.1.app'
+          - '/Applications/Xcode_10.3.app'
+          - '/Applications/Xcode_11.app'
+        xcode_flags: ['-scheme XCTAssertCrash-Package -project XCTAssertCrash.xcodeproj -enableCodeCoverage YES -parallel-testing-enabled NO test']
     runs-on: macOS-10.14
     steps:
       - uses: actions/checkout@v1
       - run: xcodebuild -version
-        env: 
-          DEVELOPER_DIR: /Applications/Xcode_${{ matrix.xcode.version }}.app
+        env: { 'DEVELOPER_DIR': '${{ matrix.developer_dir }}' }
       - name: macOS
         if: always()
-        env:
-          DEVELOPER_DIR: /Applications/Xcode_${{ matrix.xcode.version }}.app
-        run: >
-          xcodebuild -scheme XCTAssertCrash-Package -project XCTAssertCrash.xcodeproj 
-          ${{ matrix.xcode.flag_for_test }} test | xcpretty
+        env: { 'DEVELOPER_DIR': '${{ matrix.developer_dir }}' }
+        run: xcodebuild ${{ matrix.xcode_flags }} | xcpretty
         shell: bash
       - name: iPhone Simulator
         if: always()
-        env:
-          DEVELOPER_DIR: /Applications/Xcode_${{ matrix.xcode.version }}.app
-        run: > 
-          xcodebuild -scheme XCTAssertCrash-Package -project XCTAssertCrash.xcodeproj
-          ${{ matrix.xcode.flag_for_test }} test -sdk iphonesimulator -destination "name=iPhone 8" | xcpretty
+        env: { 'DEVELOPER_DIR': '${{ matrix.developer_dir }}' }
+        run: xcodebuild ${{ matrix.xcode_flags }} -sdk iphonesimulator -destination "name=iPhone 8" | xcpretty
         shell: bash
       - name: Apple TV Simulator
         if: always()
-        env:
-          DEVELOPER_DIR: /Applications/Xcode_${{ matrix.xcode.version }}.app
-        run: >
-          xcodebuild -scheme XCTAssertCrash-Package -project XCTAssertCrash.xcodeproj
-          ${{ matrix.xcode.flag_for_test }} test -sdk appletvsimulator -destination "name=Apple TV 4K" | xcpretty
+        env: { 'DEVELOPER_DIR': '${{ matrix.developer_dir }}' }
+        run: xcodebuild ${{ matrix.xcode_flags }} -sdk appletvsimulator -destination "name=Apple TV 4K" | xcpretty
         shell: bash
-      - run: curl -s https://codecov.io/bash | bash -s -- -t ${{ secrets.CODECOV_TOKEN }}
-        if: always()
+      - name: Codecov
+        if: contains(matrix.developer_dir, '10.3')
+        run: curl -s https://codecov.io/bash | bash -s -- -t ${{ secrets.CODECOV_TOKEN }}
         shell: bash
 
   Analyze:
@@ -70,14 +64,10 @@ jobs:
       - uses: actions/checkout@v1
       - name: Generate xcodebuild.log
         if: always()
-        env:
-          DEVELOPER_DIR: /Applications/Xcode_10.3.app
-        run: >
-          xcodebuild -scheme XCTAssertCrash-Package -project XCTAssertCrash.xcodeproj 
-          ${{ matrix.xcode.flag_for_test }} clean build-for-testing > xcodebuild.log
+        env: { 'DEVELOPER_DIR': '/Applications/Xcode_10.3.app' }
+        run: xcodebuild -scheme XCTAssertCrash-Package -project XCTAssertCrash.xcodeproj clean build-for-testing > xcodebuild.log
         shell: bash
       - name: Install SwiftLint
-        run: >
-          HOMEBREW_NO_AUTO_UPDATE=1 brew install https://raw.github.com/Homebrew/homebrew-core/master/Formula/swiftlint.rb
+        run: HOMEBREW_NO_AUTO_UPDATE=1 brew install https://raw.github.com/Homebrew/homebrew-core/master/Formula/swiftlint.rb
       - name: Run SwiftLint Analyze
         run: swiftlint analyze --strict --compiler-log-path xcodebuild.log
